@@ -34,6 +34,18 @@
                 align-items-center
               "
             >
+              <router-link :to="{ name: 'Home' }" class="no-underline ml-3"
+                >Home</router-link
+              >
+            </li>
+            <li
+              class="
+                header__nav-item
+                flex
+                justify-content-start
+                align-items-center
+              "
+            >
               <router-link
                 :to="{ name: 'SearchMovie' }"
                 class="no-underline ml-3"
@@ -117,13 +129,22 @@
           <div class="bar-2"></div>
           <div class="bar-3"></div>
           <ul class="mobile-menu">
-            <li><router-link to="#">Pricing</router-link></li>
-            <li><router-link to="#">About</router-link></li>
+            <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
+            <li>
+              <router-link :to="{ name: 'SearchMovie' }"
+                >Search Movie</router-link
+              >
+            </li>
+            <li>
+              <router-link :to="{ name: 'About' }">About</router-link>
+            </li>
             <li>
               <router-link :to="{ name: 'Contact' }">Contact</router-link>
             </li>
+            <li>
+              <router-link :to="{ name: 'Watchlist' }">Watchlist</router-link>
+            </li>
             <li><router-link to="#">Login</router-link></li>
-            <li><router-link to="#">Profile</router-link></li>
           </ul>
         </div>
       </div>
@@ -257,7 +278,7 @@ export default {
       height: 30px;
     }
   }
-  @media only screen and (max-width: 805px) {
+  @media only screen and (max-width: 1220px) {
     .header__content {
       display: none !important;
     }

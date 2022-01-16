@@ -17,7 +17,7 @@
       </router-link>
       <div class="card__content-bottom">
         <!--        <div class="card_category">category</div>-->
-        <div class="card_release-date">
+        <div class="card_release-date align-self-center">
           {{ movie.release_date.slice(0, 4) }}
         </div>
         <div class="card_watchlist-btn">
@@ -36,7 +36,7 @@
             remove watchlist
           </button>
         </div>
-        <div class="card__footer">
+        <div class="card__footer align-self-center">
           <p>{{ movie.vote_average }}</p>
         </div>
       </div>
@@ -146,6 +146,52 @@ export default {
     justify-content: space-between;
     font-size: 1.3rem;
     color: #8bacd9;
+
+    .add-to-watchlist-btn {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      min-width: 160px;
+      height: 40px;
+      border-radius: 16px;
+      background-color: #358f80;
+      font-size: 13px;
+      color: #e0e0e0;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: 0.3s ease-in;
+      border: none;
+    }
+
+    .add-to-watchlist-btn:hover {
+      cursor: pointer;
+      background-color: #036666;
+    }
+    .remove-from-watchlist-btn {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+
+      min-width: 160px;
+      height: 40px;
+      border-radius: 16px;
+      background-color: #800f2f;
+      font-size: 13px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: 0.7s ease;
+      transition-property: color, background-color, border-color;
+      border: none;
+    }
+    .remove-from-watchlist-btn:hover {
+      cursor: pointer;
+      background-color: #590d22;
+    }
   }
 }
 </style>
