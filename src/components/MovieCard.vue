@@ -20,6 +20,22 @@
         <div class="card_release-date">
           {{ movie.release_date.slice(0, 4) }}
         </div>
+        <div class="card_watchlist-btn">
+          <button
+            class="add-to-watchlist-btn"
+            v-if="!isInWatchList(movie.id)"
+            @click="addToWatchList(movie)"
+          >
+            Add watchlist
+          </button>
+          <button
+            class="remove-from-watchlist-btn"
+            v-if="isInWatchList(movie.id)"
+            @click="removeFromWatchList(movie)"
+          >
+            remove watchlist
+          </button>
+        </div>
         <div class="card__footer">
           <p>{{ movie.vote_average }}</p>
         </div>
@@ -29,26 +45,39 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  name: "MovieCard",
+  name: 'MovieCard',
   props: {
     movie: {
       type: Object,
-      required: true,
+      required: true
+    }
+  },
+  methods: {
+    addToWatchList(movie) {
+      this.$store.dispatch('movies/addToWatchList', movie)
     },
+    removeFromWatchList(movie) {
+      this.$store.dispatch('movies/removeFromWatchList', movie)
+    }
   },
   computed: {
+    ...mapGetters({
+      isInWatchList: 'movies/_isInWatchList'
+    }),
     id() {
-      return this.movie.id;
-    },
+      return this.movie.id
+    }
   },
   watch: {
     // react when route change
     $route(to) {
-      this.id = to.params.id;
-    },
-  },
-};
+      this.id = to.params.id
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -72,7 +101,7 @@ export default {
       width: 100%;
     }
     @mixin hoverOpacity {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       width: 100%;

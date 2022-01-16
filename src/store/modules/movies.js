@@ -3,6 +3,7 @@ import movieService from '@/services/movieService'
 const state = {
   popularMovies: [],
   searchedMovies: [],
+  watchList: [],
   loading: false
 }
 const mutations = {
@@ -14,6 +15,12 @@ const mutations = {
   },
   SET_SEARCHED_MOVIES(state, data) {
     state.searchedMovies = data
+  },
+  ADD_TO_WATCH_LIST(state, data) {
+    state.watchList.push(data)
+  },
+  REMOVE_FROM_WATCHLIST(state, data) {
+    state.watchList = state.watchList.filter((item) => item.id !== data.id)
   }
 }
 const getters = {
@@ -25,6 +32,16 @@ const getters = {
   },
   _searchedMovies(state) {
     return state.searchedMovies
+  },
+  _watchList(state) {
+    return state.watchList
+  },
+  _isInWatchList: (state) => (id) => {
+    if (state.watchList.length > 0) {
+      return state.watchList.filter((item) => item.id === id).length > 0
+    } else {
+      return false
+    }
   }
 }
 const actions = {
@@ -46,6 +63,26 @@ const actions = {
       await movieService.searchMovie(payload).then((res) => {
         commit('SET_SEARCHED_MOVIES', res.data.results)
       })
+    } catch (e) {
+      console.log(e)
+    } finally {
+      commit('SET_LOADING', false)
+    }
+  },
+  addToWatchList({ commit }, payload) {
+    try {
+      commit('SET_LOADING', true)
+      commit('ADD_TO_WATCH_LIST', payload)
+    } catch (e) {
+      console.log(e)
+    } finally {
+      commit('SET_LOADING', false)
+    }
+  },
+  removeFromWatchList({ commit }, payload) {
+    try {
+      commit('SET_LOADING', true)
+      commit('REMOVE_FROM_WATCHLIST', payload)
     } catch (e) {
       console.log(e)
     } finally {

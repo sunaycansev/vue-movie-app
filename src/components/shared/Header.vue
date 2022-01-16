@@ -64,6 +64,18 @@
                 >Contact</router-link
               >
             </li>
+            <li
+              class="
+                header__nav-item
+                flex
+                justify-content-start
+                align-items-center
+              "
+            >
+              <router-link class="no-underline" :to="{ name: 'WatchList' }"
+                >Watchlist</router-link
+              >
+            </li>
           </ul>
           <ul class="header__nav-right header__nav flex align-items-center">
             <li

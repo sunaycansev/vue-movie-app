@@ -5,6 +5,7 @@ import MovieDetail from '@/views/MovieDetail'
 import Contact from '@/views/Contact'
 import About from '@/views/About'
 import SearchMovie from '@/views/SearchMovie'
+import WatchList from '@/views/WatchList'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/search',
     name: 'SearchMovie',
     component: SearchMovie
+  },
+  {
+    path: '/watchlist',
+    name: 'WatchList',
+    component: WatchList
   }
 ]
 
