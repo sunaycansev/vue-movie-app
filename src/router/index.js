@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import MovieDetail from '@/views/MovieDetail'
 import Contact from '@/views/Contact'
 import About from '@/views/About'
+import SearchMovie from '@/views/SearchMovie'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/search',
+    name: 'SearchMovie',
+    component: SearchMovie
   }
 ]
 

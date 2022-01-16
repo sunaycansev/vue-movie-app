@@ -35,7 +35,7 @@
               "
             >
               <router-link to="#" class="no-underline ml-3"
-                >Pricing</router-link
+                >Search Movie</router-link
               >
             </li>
             <li
@@ -46,7 +46,9 @@
                 align-items-center
               "
             >
-              <router-link class="no-underline" to="#">About</router-link>
+              <router-link class="no-underline" :to="{ name: 'About' }"
+                >About</router-link
+              >
             </li>
             <li
               class="

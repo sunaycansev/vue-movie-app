@@ -13,7 +13,7 @@
           <div class="sm:col-12 xl:col-8 flex justify-content-center">
             <form action="#" class="sign__form p-5">
               <div class="grid flex">
-                <div class="sm:col-12 xl:col-6">
+                <div class="sm:col-12 xl:col-6 sign__form-name-input">
                   <div class="sign__group">
                     <input
                       type="text"
@@ -23,7 +23,7 @@
                     />
                   </div>
                 </div>
-                <div class="sm:col-12 xl:col-6">
+                <div class="sm:col-12 xl:col-6 sign__form-email-input">
                   <div class="sign__group">
                     <input
                       type="text"
@@ -52,7 +52,7 @@
                     ></textarea>
                   </div>
                 </div>
-                <div class="sm:col-12 xl:col-3">
+                <div class="sm:col-12 xl:col-3 sign__form-submit">
                   <button class="sign__btn">Send</button>
                 </div>
               </div>
@@ -114,6 +114,22 @@ section {
     padding: 1rem;
     border: 1px solid #151f30;
     margin-right: 20px;
+
+    .sign__form-name-input {
+      @media (max-width: 760px) {
+        width: 100%;
+      }
+    }
+    .sign__form-email-input {
+      @media (max-width: 760px) {
+        width: 100%;
+      }
+    }
+    .sign__form-submit {
+      @media (max-width: 578px) {
+        width: 100%;
+      }
+    }
     .sign__group {
       input {
         background-color: #151f30;
