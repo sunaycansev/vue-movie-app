@@ -2,7 +2,7 @@
   <div>
     <default-layout>
       <template slot="content">
-        <MovieList :movies="popularMovies" />
+        <MovieList :loading="loading" :movies="popularMovies" />
       </template>
     </default-layout>
   </div>
@@ -17,7 +17,8 @@ export default {
   components: { MovieList, DefaultLayout },
   computed: {
     ...mapGetters({
-      popularMovies: 'movies/_popularMovies'
+      popularMovies: 'movies/_popularMovies',
+      loading: 'movies/_loading'
     })
   },
   mounted() {
