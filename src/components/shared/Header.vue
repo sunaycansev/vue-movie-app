@@ -34,7 +34,9 @@
                 align-items-center
               "
             >
-              <router-link to="#" class="no-underline ml-3"
+              <router-link
+                :to="{ name: 'SearchMovie' }"
+                class="no-underline ml-3"
                 >Search Movie</router-link
               >
             </li>
