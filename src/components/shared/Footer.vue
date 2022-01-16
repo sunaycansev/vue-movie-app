@@ -37,7 +37,7 @@
           <router-link to="#">About Us</router-link>
           <router-link to="#">My Profile</router-link>
           <router-link to="#">Pricing plans</router-link>
-          <router-link to="#">Contacts</router-link>
+          <router-link :to="{ name: 'Contact' }">Contacts</router-link>
         </div>
       </div>
       <div class="xl:col-2 lg:col-6 md:col-4 sm:col-5 sm:col-offset-1">
@@ -102,23 +102,23 @@
 </template>
 
 <script>
-import BrandLogo from "@/assets/icons/video-movie.svg";
-import FacebookSvg from "@/assets/icons/facebook.svg";
-import TwitterSvg from "@/assets/icons/twitter.svg";
-import InstagramSvg from "@/assets/icons/instagram.svg";
-import VkSvg from "@/assets/icons/vk.svg";
-import TiktokSvg from "@/assets/icons/tiktok.svg";
+import BrandLogo from '@/assets/icons/video-movie.svg'
+import FacebookSvg from '@/assets/icons/facebook.svg'
+import TwitterSvg from '@/assets/icons/twitter.svg'
+import InstagramSvg from '@/assets/icons/instagram.svg'
+import VkSvg from '@/assets/icons/vk.svg'
+import TiktokSvg from '@/assets/icons/tiktok.svg'
 export default {
-  name: "Footer",
+  name: 'Footer',
   components: {
     BrandLogo,
     FacebookSvg,
     TwitterSvg,
     InstagramSvg,
     VkSvg,
-    TiktokSvg,
-  },
-};
+    TiktokSvg
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -161,7 +161,7 @@ export default {
       margin-top: 30px;
       font-size: 15px;
       color: #fff;
-      font-family: "Rubik", sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 600;
       margin-bottom: 15px;
     }
@@ -218,7 +218,7 @@ export default {
   }
   &::after {
     height: 300px;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

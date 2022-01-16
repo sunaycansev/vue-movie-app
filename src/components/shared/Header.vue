@@ -56,7 +56,9 @@
                 align-items-center
               "
             >
-              <router-link class="no-underline" to="#">Contact</router-link>
+              <router-link class="no-underline" :to="{ name: 'Contact' }"
+                >Contact</router-link
+              >
             </li>
           </ul>
           <ul class="header__nav-right header__nav flex align-items-center">
@@ -101,7 +103,9 @@
           <ul class="mobile-menu">
             <li><router-link to="#">Pricing</router-link></li>
             <li><router-link to="#">About</router-link></li>
-            <li><router-link to="#">Contact</router-link></li>
+            <li>
+              <router-link :to="{ name: 'Contact' }">Contact</router-link>
+            </li>
             <li><router-link to="#">Login</router-link></li>
             <li><router-link to="#">Profile</router-link></li>
           </ul>
@@ -112,23 +116,23 @@
 </template>
 
 <script>
-import BrandLogo from "@/assets/icons/video-movie.svg";
+import BrandLogo from '@/assets/icons/video-movie.svg'
 export default {
-  name: "Header",
+  name: 'Header',
   components: {
-    BrandLogo,
+    BrandLogo
   },
   data() {
     return {
-      isActive: false,
-    };
+      isActive: false
+    }
   },
   methods: {
     toggleNavBtn() {
-      this.isActive = !this.isActive;
-    },
-  },
-};
+      this.isActive = !this.isActive
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
