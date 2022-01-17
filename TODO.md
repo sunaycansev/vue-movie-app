@@ -8,3 +8,10 @@
 - wishlist fonksiyonuna ve sayfasına ulaşabilmek için login olmak gerekecek
 - login register fonksiyonları firebase ile yapılacak
 - mutation'da state.movies = state.movies.push(item) yaptıgımda bana number döndü araştır.
+
+---
+
+=> carousel ekle
+=> login page
+=> logout page
+=> 404 page
