@@ -58,9 +58,11 @@ export default {
   methods: {
     addToWatchList(movie) {
       this.$store.dispatch('movies/addToWatchList', movie)
+      this.$toast.success('Movie added to watchlist!')
     },
     removeFromWatchList(movie) {
       this.$store.dispatch('movies/removeFromWatchList', movie)
+      this.$toast.success('Movie removed from watchlist!')
     }
   },
   computed: {

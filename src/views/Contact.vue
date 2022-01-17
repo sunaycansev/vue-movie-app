@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 <div class="sm:col-12 xl:col-3 sign__form-submit">
-                  <button class="sign__btn" @click="send">Send</button>
+                  <button class="sign__btn">Send</button>
                 </div>
               </div>
             </form>
@@ -85,7 +85,6 @@
           </div>
         </div>
       </section>
-      <p-toast position="top-right"></p-toast>
     </template>
   </default-layout>
 </template>
@@ -110,12 +109,7 @@ export default {
   methods: {
     send() {
       console.log('send')
-      this.$toast.add({
-        severity: 'success',
-        summary: 'Thank you',
-        detail: 'Message taken',
-        life: 3000
-      })
+      this.$toast.success('Your message has been received!')
     }
   }
 }
