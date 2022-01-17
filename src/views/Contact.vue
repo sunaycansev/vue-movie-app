@@ -11,11 +11,12 @@
       <section class="form__section">
         <div class="container grid justify-content-center">
           <div class="sm:col-12 xl:col-8 flex justify-content-center">
-            <form action="#" class="sign__form p-5">
+            <form @submit.prevent="send" class="sign__form p-5">
               <div class="grid flex">
                 <div class="sm:col-12 xl:col-6 sign__form-name-input">
                   <div class="sign__group">
                     <input
+                      v-model="formData.name"
                       type="text"
                       name="name"
                       class="sign__input"
@@ -26,6 +27,7 @@
                 <div class="sm:col-12 xl:col-6 sign__form-email-input">
                   <div class="sign__group">
                     <input
+                      v-model="formData.email"
                       type="text"
                       name="email"
                       class="sign__input"
@@ -36,6 +38,7 @@
                 <div class="col-12">
                   <div class="sign__group">
                     <input
+                      v-model="formData.subject"
                       type="text"
                       name="subject"
                       class="sign__input"
@@ -46,6 +49,7 @@
                 <div class="col-12">
                   <div class="sign__group">
                     <textarea
+                      v-model="formData.message"
                       name="text"
                       class="sign__textarea"
                       placeholder="Type your message"
@@ -53,7 +57,7 @@
                   </div>
                 </div>
                 <div class="sm:col-12 xl:col-3 sign__form-submit">
-                  <button class="sign__btn">Send</button>
+                  <button class="sign__btn" @click="send">Send</button>
                 </div>
               </div>
             </form>
@@ -81,6 +85,7 @@
           </div>
         </div>
       </section>
+      <p-toast position="top-right"></p-toast>
     </template>
   </default-layout>
 </template>
@@ -91,6 +96,27 @@ export default {
   name: 'Contact',
   components: {
     DefaultLayout
+  },
+  data() {
+    return {
+      formData: {
+        name: null,
+        email: null,
+        subject: null,
+        message: null
+      }
+    }
+  },
+  methods: {
+    send() {
+      console.log('send')
+      this.$toast.add({
+        severity: 'success',
+        summary: 'Thank you',
+        detail: 'Message taken',
+        life: 3000
+      })
+    }
   }
 }
 </script>
