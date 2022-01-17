@@ -1,8 +1,9 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import movies from "./modules/movies";
+import Vue from 'vue'
+import Vuex from 'vuex'
+import movies from './modules/movies'
+import createPersistedState from 'vuex-persistedstate'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {},
@@ -10,6 +11,11 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    movies,
+    movies
   },
-});
+  plugins: [
+    createPersistedState({
+      paths: ['movies']
+    })
+  ]
+})
