@@ -6,6 +6,9 @@ import Contact from '@/views/Contact'
 import About from '@/views/About'
 import SearchMovie from '@/views/SearchMovie'
 import WatchList from '@/views/WatchList'
+import Login from '@/views/Login'
+import Signup from '@/views/Signup'
+import NotFound from '@/views/NotFound'
 
 Vue.use(VueRouter)
 
@@ -39,6 +42,20 @@ const routes = [
     path: '/watchlist',
     name: 'WatchList',
     component: WatchList
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 

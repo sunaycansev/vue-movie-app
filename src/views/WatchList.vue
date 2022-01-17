@@ -1,7 +1,7 @@
 <template>
   <default-layout>
     <template slot="content">
-      <div v-if="movies.length === 0" class="grid justify-content-center mt-3">
+      <div v-if="movies.length === 0" class="grid justify-content-center mt-6">
         <div class="col-6">
           <h1 class="text-white text-center">
             There is no movie in your watchlist.

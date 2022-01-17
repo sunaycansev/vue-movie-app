@@ -98,7 +98,9 @@
                 align-items-center
               "
             >
-              <router-link class="no-underline" to="#">Login</router-link>
+              <router-link class="no-underline" :to="{ name: 'Login' }"
+                >Login</router-link
+              >
             </li>
             <li
               class="
@@ -108,7 +110,9 @@
                 align-items-center
               "
             >
-              <router-link class="no-underline" to="#">Profile</router-link>
+              <router-link class="no-underline" :to="{ name: 'Signup' }"
+                >Sign Up</router-link
+              >
             </li>
           </ul>
         </div>
@@ -144,7 +148,10 @@
             <li>
               <router-link :to="{ name: 'Watchlist' }">Watchlist</router-link>
             </li>
-            <li><router-link to="#">Login</router-link></li>
+            <li>
+              <router-link :to="{ name: 'Login' }">Login</router-link>
+            </li>
+            <li><router-link :to="{ name: 'Signup' }">Sign up</router-link></li>
           </ul>
         </div>
       </div>

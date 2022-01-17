@@ -11,7 +11,7 @@
 
 ---
 
-=> carousel ekle
-=> login page
-=> logout page
+=> carousel ekle +
+=> login page +
+=> logout page +
 => 404 page
