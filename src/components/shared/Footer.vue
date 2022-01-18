@@ -181,7 +181,7 @@ export default {
     }
   }
   .footer__content {
-    border-top: 1px solid #fff;
+    border-top: 1px solid #a1a1a1;
     .footer__links {
       a {
         text-decoration: none;

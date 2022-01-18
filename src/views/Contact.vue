@@ -17,11 +17,17 @@
                   <div class="sign__group">
                     <input
                       v-model="formData.name"
+                      @blur="$v.formData.name.$touch()"
                       type="text"
                       name="name"
                       class="sign__input"
                       placeholder="Name"
                     />
+                    <small
+                      class="text-white ml-2 mb-2"
+                      v-if="$v.formData.name.$error"
+                      >This field is required.</small
+                    >
                   </div>
                 </div>
                 <div class="sm:col-12 xl:col-6 sign__form-email-input">
@@ -91,6 +97,7 @@
 
 <script>
 import DefaultLayout from '@/layout/DefaultLayout'
+import { required } from 'vuelidate/lib/validators'
 export default {
   name: 'Contact',
   components: {
@@ -103,6 +110,13 @@ export default {
         email: null,
         subject: null,
         message: null
+      }
+    }
+  },
+  validations: {
+    formData: {
+      name: {
+        required
       }
     }
   },
