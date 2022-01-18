@@ -7,6 +7,8 @@
 This application is made with Vue.js. Within the application, you can see popular movies from the TMDB API, as well as search for a movie you want and add any movie to your watch list. In the application, there are a total of 6 pages, including Popular movies, movie details, log-in, registration, movie search, about us, and contact.  
 The application works in sync with local storage.
 
+- [Live Demo Here](https://vue-movie-app-sunay.vercel.app/)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
